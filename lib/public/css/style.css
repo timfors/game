@@ -1,0 +1,27 @@
+.dropdown-main {
+   left: 50%;
+   right: auto;
+    text-align: center;
+   transform: translate(-50%, 0);
+ }
+ .img-responsive {
+  margin: auto;
+ }
+ .lessons {
+	font-size: 35px;
+}
+.day {
+ 	font-size: 50px;   
+}
+#href {
+    margin-left: 200px;
+}
+a {
+	text-align: center;
+	font-size: 32px;
+	margin-right: 20px;
+}
+.smile {
+	margin-top: 0px;
+	font-size: 60px;
+}
