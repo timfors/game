@@ -1,0 +1,23 @@
+doctype html
+
+html
+	head
+		link(rel='stylesheet', href='/css/bootstrap.css')
+		script.
+			function draw(id) {
+			    let canvas = document.getElementById(id),
+					ctx = canvas.getContext('2d');
+				canvas.width = 400;
+				canvas.heigth = 400;
+				ctx.font = '38px Arial';
+				ctx.fillText(id, 175, 50);
+				ctx.strokeRect(0, 0, canvas.width-10, canvas.heigth-200);
+			  }
+
+		title game
+	body(onload="draw('Hi')")
+		canvas(id="Hi", width=350, heigth=350) Reload browser		
+
+		script(src="https://code.jquery.com/jquery-3.3.1.min.js") 
+
+script(src="/js/bootstrap.js")
