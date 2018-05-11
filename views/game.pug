@@ -1,23 +1,54 @@
 doctype html
-
 html
 	head
-		link(rel='stylesheet', href='/css/bootstrap.css')
+		link(rel='stylesheet' href='/assets/styles/style.css')
+		link(rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous")
+
 		script.
-			function draw(id) {
-			    let canvas = document.getElementById(id),
+			const smile = document.getElementById("smile");
+			const math = document.getElementById("math");
+			const question = document.getElementById("question");
+			const images = [smile, math, question];
+			
+			function randomNum (min, max) {
+				//return a random whole number that [min, max)
+				return Math.floor(Math.random() * (max - min)) + min;
+			}
+			let num = 0;
+			function drawBoxHorLine (canvas, ctx, x, y) {
+				for (var i = 0; i <= 4; i++ ){
+					ctx.fillStyle = 'gray';
+					ctx.fillRect(x + i * 140, y, 160, 100);
+					ctx.clearRect(x + 5 + i * 140, y + 5, 150, 90);
+					num = randomNum(0,3);
+					ctx.drawImage(images[num], x + 40 + i*140, y + 20, 80, 50);
+				}
+			}
+			function drawBoxVerLine(canvas, ctx, x, y) {
+				ctx.fillRect(x, y, 100, 160);
+				ctx.clearRect(x + 5, y, 90, 160);
+			} 
+			function drawAll() {
+				let canvas = document.getElementById("game"),
 					ctx = canvas.getContext('2d');
-				canvas.width = 400;
-				canvas.height = 400;
-				ctx.font = '90px Arial';
-				ctx.fillText(id, canvas.width/2-175, canvas.height/2);
-				ctx.strokeRect(0, 0, canvas.width-10, canvas.height - 10);
-			  }
+				drawBoxHorLine(canvas, ctx, 0, canvas.height - 100);
+				drawBoxVerLine(canvas, ctx, canvas.width - 100, canvas.height - 260);
+				drawBoxHorLine(canvas, ctx, 0, canvas.height - 360);
+				drawBoxVerLine(canvas, ctx, 0, canvas.height - 520);
+				drawBoxHorLine(canvas, ctx, 0, canvas.height - 620);
+			}
+		title Game
+	body(onload="drawAll()")
+		canvas(id="game", width=720, height=620) Reload browser		
+			div(style="display:none")
+				img(id="smile" src="https://www.askideas.com/media/14/Smile-Clipart.jpg")
+				img(id="math" src="http://www.mathwarehouse.com/images/image-library/riddles/math-riddles-number-8.jpg")
+				img(id="question" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg")
+		
 
-		title game
-	body(onload="draw('BOOOM')")
-		canvas(id="BOOOM", width=350, height=350) Reload browser		
 
-		script(src="https://code.jquery.com/jquery-3.3.1.min.js") 
+		script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
 
-script(src="/js/bootstrap.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous")
