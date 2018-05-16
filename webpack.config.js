@@ -1,8 +1,13 @@
+const path1 = __dirname + '/lib/public/js/drawGameTable.js';
+
+const name1 = 'drawGameTable.js';
+
+
 module.exports = {
-	entry: __dirname + '/lib/public/js/drawGameTable.js',
+	entry: path1,
 	output: {
 		path: __dirname + '/lib/public/js/bundled/',
-		filename: 'drawGameTable.js'
+		filename: name1
 	},
 	watch: true
 }
