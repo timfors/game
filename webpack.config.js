@@ -1,6 +1,6 @@
-const path1 = __dirname + '/lib/public/js/drawGameTable.js';
+const path1 = __dirname + '/lib/public/js/gameScript.js';
 
-const name1 = 'drawGameTable.js';
+const name1 = 'gameScript.js';
 
 
 module.exports = {

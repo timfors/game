@@ -6,12 +6,18 @@ html
 			
 		title Game
 	body
-		canvas(id="game", width=850, height=650) Reload browser		
+		canvas(id="game", width=900, height=900) Reload browser		
 			div(style="display:none")
+				img(id="empty" src='')
 				img(id="smile" src="http://kb4images.com/images/smile-picture/38114613-smile-picture.jpg")
 				img(id="math" src="http://www.mathwarehouse.com/images/image-library/riddles/math-riddles-number-8.jpg")
-				img(id="question" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg")
-		
+				img(id="question" src="http://www.southeastfloridaclimatecompact.org/wp-content/uploads/2016/06/question-mark-icon-Question-Mark-Icon.jpg") 
+				img(id=`facet_1`, src=`/img/facet_1.jpg`)
+				img(id=`facet_2`, src=`/img/facet_2.jpg`)
+				img(id=`facet_3`, src=`/img/facet_3.jpg`)
+				img(id=`facet_4`, src=`/img/facet_4.jpg`)
+				img(id=`facet_5`, src=`/img/facet_5.jpg`)
+				img(id=`facet_6`, src=`/img/facet_6.jpg`)
 		
 		
 		<!JQuery>
@@ -19,7 +25,7 @@ html
 		<!JCanvas>
 		script(src='/js/jquery/jcanvas.min.js')
 	
-		script(src='/js/bundled/drawGameTable.js')
+		script(src='/js/bundled/gameScript.js')
 		
 		
 		
